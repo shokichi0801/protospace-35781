@@ -7,5 +7,10 @@ class PrototypesController < ApplicationController
   end
 
   def create
+    Prototype.create(ptototype_params)
   end
+
+  private
+  def prototype_params
+    params.require(:prototype).permit(:user_id)
 end
